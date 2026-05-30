@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulus Therapy Center – Klinik Terapi Profesional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0B4F6C;
+    --primary-light: #1A7EA8;
+    --primary-pale: #E8F4FA;
+    --accent: #2AB5A0;
+    --accent-light: #D6F0EC;
+    --white: #FFFFFF;
+    --off-white: #F7FBFD;
+    --text-dark: #0D2B3E;
+    --text-mid: #3A5A6E;
+    --text-muted: #7A9BAD;
+    --border: #D0E8F2;
+    --gold: #C9922A;
+    --red-soft: #E8F4FA;
+    --shadow: 0 4px 24px rgba(11,79,108,0.10);
+    --shadow-hover: 0 8px 40px rgba(11,79,108,0.18);
+    --radius: 14px;
+    --radius-lg: 22px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ===== TOPBAR ===== */
+  .topbar {
+    background: var(--primary);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--accent);
+  }
+  .topbar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .topbar a:hover { color: var(--accent); }
+  .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .topbar-item { display: flex; align-items: center; gap: 6px; }
+  .topbar-item svg { width: 14px; height: 14px; fill: var(--accent); flex-shrink: 0; }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 16px rgba(11,79,108,0.08);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    gap: 16px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-icon svg { width: 26px; height: 26px; fill: white; }
+  .logo-text { line-height: 1.2; }
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .logo-sub {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { background: var(--primary-pale); color: var(--primary); }
+  .nav-links a.active { color: var(--primary); font-weight: 600; }
+  .nav-cta {
+    background: var(--primary);
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+  }
+  .nav-cta:hover { background: var(--primary-light) !important; color: white !important; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #0B4F6C 0%, #0D6B91 50%, #1A7EA8 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px 90px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: rgba(42,181,160,0.12);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: -60px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(42,181,160,0.2);
+    border: 1px solid rgba(42,181,160,0.4);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7DE8D8;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: #7DE8D8; }
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #22a090; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,181,160,0.35); }
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #7DE8D8;
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+  .hero-card-wrap {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-main-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(16px);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  }
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-card-title svg { width: 22px; height: 22px; fill: var(--accent); }
+  .jam-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .jam-item {
+    background: var(--primary-pale);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent);
+  }
+  .jam-day { font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .jam-hours { font-size: 14px; font-weight: 600; color: var(--primary); margin-top: 2px; }
+  .hero-daftar-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .hero-daftar-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
+  .hero-daftar-btn svg { width: 18px; height: 18px; fill: white; }
+  .wa-floating {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    background: #25D366;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .wa-floating:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.55); }
+  .wa-floating svg { width: 30px; height: 30px; fill: white; }
+
+  /* ===== SECTION COMMON ===== */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1180px; margin: 0 auto; }
+  .section-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 580px;
+  }
+  .section-header { margin-bottom: 52px; }
+  .section-header.center { text-align: center; }
+  .section-header.center .section-desc { margin: 0 auto; }
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .divider.center { margin: 0 auto 20px; }
+
+  /* ===== ABOUT ===== */
+  #tentang { background: var(--off-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-main {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: var(--radius-lg);
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-img-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .about-icon-big {
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .about-icon-big svg { width: 60px; height: 60px; fill: white; }
+  .about-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 3;
+    min-width: 180px;
+  }
+  .about-badge-icon {
+    width: 40px; height: 40px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .about-badge-icon svg { width: 22px; height: 22px; fill: var(--accent); }
+  .about-badge-text { line-height: 1.3; }
+  .about-badge-num { font-size: 20px; font-weight: 700; color: var(--primary); font-family: 'Playfair Display', serif; }
+  .about-badge-lbl { font-size: 12px; color: var(--text-muted); }
+  .about-content { }
+  .about-features { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .about-feature {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .about-feature-icon {
+    width: 40px; height: 40px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .about-feature-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+  .about-feature-text h4 { font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 3px; }
+  .about-feature-text p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ===== LAYANAN ===== */
+  #layanan { background: var(--white); }
+  .layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .layanan-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    border: 1.5px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .layanan-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .layanan-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--border); }
+  .layanan-card:hover::before { transform: scaleX(1); }
+  .layanan-icon {
+    width: 56px; height: 56px;
+    background: var(--primary-pale);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .layanan-icon svg { width: 28px; height: 28px; fill: var(--primary); }
+  .layanan-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  .layanan-card p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+  .layanan-card .badge {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ===== FAQ ===== */
+  #faq { background: var(--off-white); }
+  .faq-wrap { max-width: 720px; margin: 0 auto; }
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+  .faq-q svg { width: 18px; height: 18px; fill: var(--accent); flex-shrink: 0; transition: transform 0.3s; }
+  .faq-item.open .faq-q svg { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    font-size: 14.5px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    padding: 0 22px;
+  }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 22px 18px; }
+
+  /* ===== KONTAK ===== */
+  #kontak { background: var(--white); }
+  .kontak-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .kontak-info { }
+  .kontak-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .kontak-info p { font-size: 14px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.65; }
+  .kontak-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+  .kontak-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .kontak-item-icon {
+    width: 44px; height: 44px;
+    background: var(--primary-pale);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .kontak-item-icon svg { width: 20px; height: 20px; fill: var(--primary); }
+  .kontak-item-body h4 { font-size: 13px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 3px; }
+  .kontak-item-body p, .kontak-item-body a { font-size: 14.5px; color: var(--text-dark); text-decoration: none; font-weight: 500; line-height: 1.55; }
+  .kontak-item-body a:hover { color: var(--primary-light); }
+  .sosmed-title { font-size: 13px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  .sosmed-links { display: flex; gap: 10px; }
+  .sosmed-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .sosmed-btn svg { width: 16px; height: 16px; }
+  .sosmed-btn.ig { background: #FFF0F3; color: #E1306C; }
+  .sosmed-btn.ig svg { fill: #E1306C; }
+  .sosmed-btn.ig:hover { background: #E1306C; color: white; }
+  .sosmed-btn.ig:hover svg { fill: white; }
+  .sosmed-btn.fb { background: #EEF3FF; color: #1877F2; }
+  .sosmed-btn.fb svg { fill: #1877F2; }
+  .sosmed-btn.fb:hover { background: #1877F2; color: white; }
+  .sosmed-btn.fb:hover svg { fill: white; }
+  .sosmed-btn.tt { background: #F0F0F0; color: #000; }
+  .sosmed-btn.tt svg { fill: #000; }
+  .sosmed-btn.tt:hover { background: #000; color: white; }
+  .sosmed-btn.tt:hover svg { fill: white; }
+
+  .form-card {
+    background: var(--off-white);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    border: 1px solid var(--border);
+  }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .form-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  .form-row { margin-bottom: 16px; }
+  .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-mid); margin-bottom: 7px; }
+  .form-input {
+    width: 100%;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14.5px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input:focus { border-color: var(--accent); }
+  .form-input::placeholder { color: var(--text-muted); }
+  .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  textarea.form-input { min-height: 100px; resize: vertical; }
+  .form-submit {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--primary-light); transform: translateY(-1px); }
+  .form-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 12px; line-height: 1.6; }
+
+  /* ===== MAP ===== */
+  .map-section { padding: 0; }
+  .map-section iframe { width: 100%; height: 400px; border: none; display: block; }
+
+  /* ===== DAFTAR SECTION ===== */
+  #daftar { background: var(--off-white); }
+  .daftar-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    border: 1.5px solid var(--border);
+    max-width: 640px;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+  }
+  .daftar-card .form-title { text-align: center; font-size: 22px; }
+  .daftar-card .form-sub { text-align: center; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.65);
+    padding: 60px 24px 0;
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .footer-logo-icon {
+    width: 42px; height: 42px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-logo-icon svg { width: 24px; height: 24px; fill: white; }
+  .footer-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+  }
+  .footer-logo-sub { font-size: 10px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer-about { font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+  .footer-heading { font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-contact-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13.5px; align-items: flex-start; }
+  .footer-contact-item svg { width: 14px; height: 14px; fill: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .footer-contact-item a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  .footer-contact-item a:hover { color: var(--accent); }
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-legal-links { display: flex; gap: 20px; }
+  .footer-legal-links a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-legal-links a:hover { color: var(--accent); }
+
+  /* ===== MODAL ===== */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(11,79,108,0.55);
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: var(--off-white);
+    border: none;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-mid);
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .modal-close:hover { background: var(--border); }
+  .modal h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .modal-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  .modal-success {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .modal-success-icon {
+    width: 64px; height: 64px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .modal-success-icon svg { width: 32px; height: 32px; fill: var(--accent); }
+  .modal-success h3 { font-size: 20px; }
+  .modal-success p { font-size: 14px; color: var(--text-mid); margin-top: 6px; }
+
+  /* ===== KEBIJAKAN MODAL ===== */
+  .policy-modal { max-width: 640px; max-height: 80vh; overflow-y: auto; }
+  .policy-content { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+  .policy-content h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin: 16px 0 6px; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .topbar-right { display: none; }
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 16px; gap: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 999; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 16px; border-radius: 10px; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+    .hero-card-wrap { order: -1; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { display: none; }
+    .kontak-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .form-2col { grid-template-columns: 1fr; }
+    .hero-stats { gap: 20px; }
+    section { padding: 60px 16px; }
+  }
+  @media (max-width: 480px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        Kota Bekasi, Jawa Barat
+      </span>
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        Sen–Sab: 08.00–20.00 | Min: 08.00–14.00
+      </span>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        info@tulusterapycenter.com
+      </span>
+      <a class="topbar-item" href="tel:0895428341859">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        0895-4283-41859
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#beranda" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">Tulus Therapy Center</div>
+        <div class="logo-sub">Klinik Terapi Profesional</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#beranda" class="active">Beranda</a></li>
+      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#daftar" class="nav-cta">Daftar Sekarang</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="beranda" style="padding:0;">
+  <div class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Klinik Terapi Terpercaya di Bekasi
+        </div>
+        <h1>Kesehatan & <span>Pemulihan</span> Optimal untuk Anda</h1>
+        <p class="hero-desc">Tulus Therapy Center hadir memberikan layanan terapi profesional dengan pendekatan holistik dan tim terapis berpengalaman. Kami berkomitmen untuk kesembuhan dan kualitas hidup Anda yang lebih baik.</p>
+        <div class="hero-btns">
+          <a href="#daftar" class="btn-primary">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+            Buat Janji Sekarang
+          </a>
+          <a href="https://wa.me/62895428341859" class="btn-outline" target="_blank">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat WhatsApp
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-label">Tahun Pengalaman</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">2K+</div>
+            <div class="hero-stat-label">Pasien Ditangani</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label">Tenaga Ahli</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">98%</div>
+            <div class="hero-stat-label">Kepuasan Pasien</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card-wrap">
+        <div class="hero-main-card">
+          <div class="hero-card-title">
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            Jam Operasional
+          </div>
+          <div class="jam-grid">
+            <div class="jam-item">
+              <div class="jam-day">Senin – Jumat</div>
+              <div class="jam-hours">08.00 – 20.00</div>
+            </div>
+            <div class="jam-item">
+              <div class="jam-day">Sabtu</div>
+              <div class="jam-hours">08.00 – 20.00</div>
+            </div>
+            <div class="jam-item">
+              <div class="jam-day">Minggu</div>
+              <div class="jam-hours">08.00 – 14.00</div>
+            </div>
+            <div class="jam-item">
+              <div class="jam-day">Libur Nasional</div>
+              <div class="jam-hours">Tutup</div>
+            </div>
+          </div>
+          <a href="#daftar" class="hero-daftar-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            Daftar Konsultasi Gratis
+          </a>
+          <p style="font-size:12px;color:#7A9BAD;text-align:center;margin-top:12px;">✓ Tanpa biaya pendaftaran awal</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG KAMI -->
+<section id="tentang">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-main">
+          <div class="about-icon-big">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
+          </div>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="about-badge-text">
+            <div class="about-badge-num">10+</div>
+            <div class="about-badge-lbl">Tenaga Terapis</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Tentang Kami</div>
+        <div class="divider"></div>
+        <h2 class="section-title">Dedikasi Penuh untuk Kesehatan Anda</h2>
+        <p class="section-desc">Tulus Therapy Center (TTC) adalah klinik terapi profesional yang berlokasi di Bekasi. Didirikan dengan semangat tulus melayani, kami menghadirkan layanan terapi terbaik dengan tenaga ahli bersertifikat dan fasilitas modern.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Terapis Bersertifikat</h4>
+              <p>Seluruh terapis kami memiliki sertifikasi resmi dan pengalaman bertahun-tahun di bidangnya.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Pendekatan Personal</h4>
+              <p>Setiap pasien mendapat program terapi yang disesuaikan dengan kondisi dan kebutuhan individu.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Fasilitas Lengkap & Bersih</h4>
+              <p>Ruang terapi nyaman, peralatan modern, dan standar kebersihan tinggi untuk kenyamanan Anda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Layanan Kami</div>
+      <div class="divider center"></div>
+      <h2 class="section-title">Program Terapi Terlengkap</h2>
+      <p class="section-desc">Kami menyediakan berbagai layanan terapi komprehensif yang dirancang untuk membantu pemulihan dan meningkatkan kualitas hidup Anda.</p>
+    </div>
+    <div class="layanan-grid">
+      <div class="layanan-card">
+        <div class="layanan-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2.05V4.09c3.95.49 7 3.85 7 7.91 0 3.21-1.81 6-4.72 7.28L13 17v5c5.5-.26 10-4.9 10-10.1 0-5.35-3.9-9.77-9-10.22-.33-.03-.67-.03-1 0zM11 2.05C5.95 2.56 2 6.96 2 12c0 5.1 4.43 9.68 9.99 9.95L12 22l-.01-5-2.28 2.28C7.81 18 6 15.21 6 12c0-4.06 3.05-7.42 7-7.91V2.05z"/></svg>
+        </div>
+        <h3>Fisioterapi</h3>
+        <p>Terapi gerak dan fisik untuk pemulihan cedera, nyeri sendi, gangguan postur, dan rehabilitasi pasca operasi.</p>
+        <span class="badge">Tersedia</span>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        </div>
+        <h3>Terapi Wicara</h3>
+        <p>Membantu gangguan bicara, bahasa, dan komunikasi pada anak-anak maupun dewasa dengan metode terstruktur.</p>
+        <span class="badge">Tersedia</span>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+        </div>
+        <h3>Terapi Okupasi</h3>
+        <p>Meningkatkan kemampuan fungsional sehari-hari untuk kemandirian pasien dengan gangguan fisik maupun kognitif.</p>
+        <span class="badge">Tersedia</span>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm-.5-5H9l3-8 3 8h-2.5l-.5-1.5h-2L11.5 14zm.5-3l-.5-1.5h-1L11 11h1z"/></svg>
+        </div>
+        <h3>Terapi Sensori Integrasi</h3>
+        <p>Program khusus untuk anak-anak dengan gangguan pemrosesan sensoris, autisme, dan hambatan perkembangan.</p>
+        <span class="badge">Tersedia</span>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </div>
+        <h3>Terapi Perilaku</h3>
+        <p>Intervensi perilaku berbasis bukti untuk mendukung perkembangan anak dan pengelolaan emosi yang lebih baik.</p>
+        <span class="badge">Tersedia</span>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+        </div>
+        <h3>Konsultasi & Asesmen</h3>
+        <p>Evaluasi menyeluruh kondisi pasien oleh tenaga ahli untuk menentukan program terapi yang paling tepat.</p>
+        <span class="badge">Tersedia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">FAQ</div>
+      <div class="divider center"></div>
+      <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+      <p class="section-desc">Temukan jawaban untuk pertanyaan umum seputar layanan dan prosedur di Tulus Therapy Center.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana cara mendaftar sebagai pasien baru?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        <div class="faq-a">Anda dapat mendaftar melalui formulir di website ini, menghubungi kami via WhatsApp di 0895-4283-41859, atau datang langsung ke klinik. Konsultasi awal gratis untuk membantu menentukan program terapi yang sesuai.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Apakah tersedia layanan terapi untuk anak-anak?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        <div class="faq-a">Ya, kami melayani terapi untuk semua usia, termasuk anak-anak. Kami memiliki program khusus untuk terapi wicara, sensori integrasi, terapi perilaku, dan okupasi yang dirancang sesuai kebutuhan anak.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Berapa biaya terapi di Tulus Therapy Center?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        <div class="faq-a">Biaya terapi bervariasi tergantung jenis layanan dan durasi sesi. Konsultasi awal gratis. Untuk informasi tarif lengkap, silakan hubungi kami langsung. Kami juga menerima beberapa jenis asuransi kesehatan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Apakah bisa menggunakan BPJS atau asuransi?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        <div class="faq-a">Untuk informasi terkini mengenai penerimaan BPJS dan asuransi swasta, silakan menghubungi kami langsung karena ketentuan dapat berubah. Tim kami akan membantu menjelaskan opsi pembayaran yang tersedia untuk Anda.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Berapa lama program terapi berlangsung?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        <div class="faq-a">Durasi program terapi sangat bergantung pada kondisi dan kebutuhan individu pasien. Setelah asesmen awal, terapis kami akan memberikan rekomendasi program yang sesuai, biasanya mulai dari beberapa minggu hingga beberapa bulan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Apakah ada parkir tersedia di klinik?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        <div class="faq-a">Ya, tersedia area parkir di sekitar klinik. Klinik kami berlokasi di Perum Bumi Bekasi Baru, Jl. Prambanan No.9-10 yang mudah diakses dari berbagai penjuru Kota Bekasi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Hubungi Kami</div>
+      <div class="divider"></div>
+      <h2 class="section-title">Kami Siap Membantu Anda</h2>
+      <p class="section-desc">Jangan ragu untuk menghubungi kami. Tim kami siap menjawab pertanyaan dan membantu proses pendaftaran Anda.</p>
+    </div>
+    <div class="kontak-grid">
+      <div class="kontak-info">
+        <div class="kontak-items">
+          <div class="kontak-item">
+            <div class="kontak-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="kontak-item-body">
+              <h4>Telepon</h4>
+              <a href="tel:0895428341859">0895-4283-41859</a>
+            </div>
+          </div>
+          <div class="kontak-item">
+            <div class="kontak-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="kontak-item-body">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/62895428341859" target="_blank">Chat langsung di WhatsApp</a>
+            </div>
+          </div>
+          <div class="kontak-item">
+            <div class="kontak-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="kontak-item-body">
+              <h4>Email</h4>
+              <a href="mailto:info@tulusterapycenter.com">info@tulusterapycenter.com</a>
+            </div>
+          </div>
+          <div class="kontak-item">
+            <div class="kontak-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            </div>
+            <div class="kontak-item-body">
+              <h4>Alamat</h4>
+              <p>TTC (Tulus Therapy Center), Perum Bumi Bekasi Baru Jl. Prambanan No.9-10, RT.004/RW.010, Sepanjang Jaya, Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17114</p>
+            </div>
+          </div>
+        </div>
+        <div class="sosmed-title">Ikuti Kami di Media Sosial</div>
+        <div class="sosmed-links">
+          <a href="https://www.instagram.com/kliniktumbuhkembang_ttc?igsh=MWFkbzd2ODQzYTgzdg==" class="sosmed-btn ig" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@tulusteraphycenter?_r=1&_t=ZS-96nWAP4tDrW" class="sosmed-btn tt" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-title">Kirim Pesan</div>
+        <div class="form-sub">Isi form di bawah, kami akan merespons dalam 1×24 jam.</div>
+        <div class="form-2col">
+          <div class="form-row" style="margin-bottom:0">
+            <label class="form-label">Nama Lengkap *</label>
+            <input type="text" class="form-input" placeholder="Nama Anda" id="kontakNama">
+          </div>
+          <div class="form-row" style="margin-bottom:0">
+            <label class="form-label">Nomor Telepon *</label>
+            <input type="tel" class="form-input" placeholder="08xxxxxxxxxx" id="kontakTelp">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="email@anda.com" id="kontakEmail">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Subjek</label>
+          <input type="text" class="form-input" placeholder="Pertanyaan / keperluan Anda" id="kontakSubjek">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Pesan *</label>
+          <textarea class="form-input" placeholder="Tuliskan pesan Anda..." id="kontakPesan"></textarea>
+        </div>
+        <button class="form-submit" onclick="kirimPesan()">Kirim Pesan</button>
+        <p class="form-note">🔒 Data Anda aman dan tidak akan dibagikan kepada pihak ketiga.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAPS -->
+<div class="map-section">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d107.0!3d-6.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698c5e5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sJl.%20Prambanan%2C%20Sepanjang%20Jaya%2C%20Kec.%20Rawalumbu%2C%20Kota%20Bks%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- DAFTAR SEKARANG -->
+<section id="daftar">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Pendaftaran</div>
+      <div class="divider center"></div>
+      <h2 class="section-title">Daftar sebagai Pasien Baru</h2>
+      <p class="section-desc">Isi formulir di bawah untuk membuat janji konsultasi awal yang gratis bersama terapis kami.</p>
+    </div>
+    <div class="daftar-card">
+      <div class="form-title">Form Pendaftaran Pasien</div>
+      <div class="form-sub">Konsultasi awal gratis – Kami akan menghubungi Anda untuk konfirmasi jadwal</div>
+      <div class="form-2col">
+        <div class="form-row" style="margin-bottom:0">
+          <label class="form-label">Nama Pasien *</label>
+          <input type="text" class="form-input" placeholder="Nama lengkap pasien" id="daftarNama">
+        </div>
+        <div class="form-row" style="margin-bottom:0">
+          <label class="form-label">Tanggal Lahir *</label>
+          <input type="date" class="form-input" id="daftarTgl">
+        </div>
+      </div>
+      <div class="form-2col">
+        <div class="form-row" style="margin-bottom:0">
+          <label class="form-label">Nomor Telepon *</label>
+          <input type="tel" class="form-input" placeholder="08xxxxxxxxxx" id="daftarTelp">
+        </div>
+        <div class="form-row" style="margin-bottom:0">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="email@anda.com" id="daftarEmail">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Jenis Terapi yang Diinginkan *</label>
+        <select class="form-input" id="daftarTerapi">
+          <option value="">-- Pilih Jenis Terapi --</option>
+          <option>Fisioterapi</option>
+          <option>Terapi Wicara</option>
+          <option>Terapi Okupasi</option>
+          <option>Terapi Sensori Integrasi</option>
+          <option>Terapi Perilaku</option>
+          <option>Konsultasi & Asesmen</option>
+          <option>Lainnya</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Keluhan / Kondisi</label>
+        <textarea class="form-input" placeholder="Ceritakan kondisi atau keluhan pasien secara singkat..." id="daftarKeluhan" style="min-height:80px;"></textarea>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Preferensi Jadwal</label>
+        <input type="text" class="form-input" placeholder="Contoh: Senin pagi, atau Sabtu siang" id="daftarJadwal">
+      </div>
+      <button class="form-submit" onclick="daftarPasien()">
+        Kirim Pendaftaran
+      </button>
+      <p class="form-note">Dengan mendaftar, Anda menyetujui <a href="#" onclick="bukaKebijakan()" style="color:var(--accent);">Kebijakan Privasi</a> dan <a href="#" onclick="bukaSyarat()" style="color:var(--accent);">Syarat & Ketentuan</a> kami.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <div class="footer-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
+        </div>
+        <div>
+          <div class="footer-logo-name">Tulus Therapy Center</div>
+          <div class="footer-logo-sub">Klinik Terapi Profesional</div>
+        </div>
+      </div>
+      <p class="footer-about">Klinik terapi profesional di Bekasi yang berkomitmen memberikan pelayanan terbaik dengan pendekatan holistik untuk pemulihan dan kualitas hidup yang lebih baik.</p>
+      <div class="sosmed-links">
+        <a href="https://www.instagram.com/kliniktumbuhkembang_ttc?igsh=MWFkbzd2ODQzYTgzdg==" class="sosmed-btn ig" style="padding:8px 12px;font-size:12px;" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          IG
+        </a>
+        <a href="https://www.tiktok.com/@tulusteraphycenter?_r=1&_t=ZS-96nWAP4tDrW" class="sosmed-btn tt" style="padding:8px 12px;font-size:12px;" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Menu</div>
+      <ul class="footer-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Layanan</div>
+      <ul class="footer-links">
+        <li><a href="#layanan">Fisioterapi</a></li>
+        <li><a href="#layanan">Terapi Wicara</a></li>
+        <li><a href="#layanan">Terapi Okupasi</a></li>
+        <li><a href="#layanan">Sensori Integrasi</a></li>
+        <li><a href="#layanan">Terapi Perilaku</a></li>
+        <li><a href="#layanan">Konsultasi</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Kontak</div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <a href="tel:0895428341859">0895-4283-41859</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <a href="mailto:info@tulusterapycenter.com">info@tulusterapycenter.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        <span>Jl. Prambanan No.9-10, Sepanjang Jaya, Rawalumbu, Kota Bekasi 17114</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        <span>Sen–Sab 08.00–20.00 | Min 08.00–14.00</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Tulus Therapy Center. Hak cipta dilindungi undang-undang.</span>
+    <div class="footer-legal-links">
+      <a href="#" onclick="bukaKebijakan()">Kebijakan Privasi</a>
+      <a href="#" onclick="bukaSyarat()">Syarat & Ketentuan</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOATING -->
+<a href="https://wa.me/62895428341859?text=Halo%20Tulus%20Therapy%20Center%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20terapi." class="wa-floating" target="_blank" title="Chat WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MODAL SUCCESS -->
+<div class="modal-backdrop" id="modalSuccess">
+  <div class="modal" style="max-width:420px;">
+    <button class="modal-close" onclick="tutupModal('modalSuccess')">×</button>
+    <div class="modal-success">
+      <div class="modal-success-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <h3>Berhasil Dikirim!</h3>
+      <p id="modalSuccessMsg">Terima kasih! Tim kami akan segera menghubungi Anda.</p>
+      <button class="btn-primary" onclick="tutupModal('modalSuccess')" style="margin-top:20px;display:inline-flex;">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL KEBIJAKAN PRIVASI -->
+<div class="modal-backdrop" id="modalKebijakan">
+  <div class="modal policy-modal">
+    <button class="modal-close" onclick="tutupModal('modalKebijakan')">×</button>
+    <h3>Kebijakan Privasi</h3>
+    <div class="modal-sub">Berlaku sejak: 1 Januari 2024</div>
+    <div class="policy-content">
+      <p>Tulus Therapy Center berkomitmen untuk melindungi privasi dan keamanan data pribadi Anda.</p>
+      <h4>1. Data yang Kami Kumpulkan</h4>
+      <p>Kami mengumpulkan informasi seperti nama, nomor telepon, email, dan kondisi kesehatan yang Anda berikan secara sukarela melalui formulir pendaftaran atau konsultasi.</p>
+      <h4>2. Penggunaan Data</h4>
+      <p>Data Anda digunakan semata-mata untuk keperluan pelayanan terapi, konfirmasi jadwal, dan komunikasi terkait layanan kami. Kami tidak menjual atau membagikan data Anda kepada pihak ketiga.</p>
+      <h4>3. Keamanan Data</h4>
+      <p>Kami menggunakan langkah-langkah keamanan teknis dan operasional untuk melindungi data pribadi Anda dari akses tidak sah.</p>
+      <h4>4. Hak Anda</h4>
+      <p>Anda berhak untuk mengakses, memperbarui, atau meminta penghapusan data pribadi Anda dengan menghubungi kami melalui kontak yang tersedia.</p>
+      <h4>5. Hubungi Kami</h4>
+      <p>Pertanyaan mengenai kebijakan privasi dapat disampaikan ke info@tulusterapycenter.com atau 0895-4283-41859.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SYARAT & KETENTUAN -->
+<div class="modal-backdrop" id="modalSyarat">
+  <div class="modal policy-modal">
+    <button class="modal-close" onclick="tutupModal('modalSyarat')">×</button>
+    <h3>Syarat & Ketentuan</h3>
+    <div class="modal-sub">Berlaku sejak: 1 Januari 2024</div>
+    <div class="policy-content">
+      <h4>1. Pendaftaran Pasien</h4>
+      <p>Pendaftaran wajib dilakukan sebelum sesi terapi. Data yang diberikan harus akurat dan lengkap untuk memastikan program terapi yang tepat.</p>
+      <h4>2. Jadwal & Pembatalan</h4>
+      <p>Pembatalan jadwal terapi mohon dilakukan minimal 24 jam sebelumnya melalui WhatsApp atau telepon. Pembatalan mendadak dapat dikenakan biaya administrasi.</p>
+      <h4>3. Privasi & Kerahasiaan</h4>
+      <p>Seluruh informasi medis dan kondisi pasien bersifat rahasia dan hanya digunakan untuk keperluan terapi.</p>
+      <h4>4. Tanggung Jawab</h4>
+      <p>Hasil terapi bervariasi pada setiap individu. Klinik berkomitmen memberikan pelayanan terbaik namun tidak dapat menjamin hasil yang sama bagi semua pasien.</p>
+      <h4>5. Pembayaran</h4>
+      <p>Pembayaran dilakukan sesuai dengan tarif yang berlaku. Informasi lebih lanjut mengenai tarif tersedia di klinik atau melalui konsultasi awal.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+function toggleFaq(el) {
+  var item = el.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+function tutupModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+document.querySelectorAll('.modal-backdrop').forEach(function(b) {
+  b.addEventListener('click', function(e) {
+    if (e.target === b) b.classList.remove('open');
+  });
+});
+
+function bukaKebijakan() { document.getElementById('modalKebijakan').classList.add('open'); return false; }
+function bukaSyarat() { document.getElementById('modalSyarat').classList.add('open'); return false; }
+
+function kirimPesan() {
+  var nama = document.getElementById('kontakNama').value.trim();
+  var telp = document.getElementById('kontakTelp').value.trim();
+  var pesan = document.getElementById('kontakPesan').value.trim();
+  if (!nama || !telp || !pesan) { alert('Mohon isi nama, nomor telepon, dan pesan Anda.'); return; }
+  document.getElementById('modalSuccessMsg').innerText = 'Terima kasih, ' + nama + '! Pesan Anda telah diterima. Tim kami akan menghubungi Anda segera.';
+  document.getElementById('modalSuccess').classList.add('open');
+  document.getElementById('kontakNama').value = '';
+  document.getElementById('kontakTelp').value = '';
+  document.getElementById('kontakEmail').value = '';
+  document.getElementById('kontakSubjek').value = '';
+  document.getElementById('kontakPesan').value = '';
+}
+
+function daftarPasien() {
+  var nama = document.getElementById('daftarNama').value.trim();
+  var telp = document.getElementById('daftarTelp').value.trim();
+  var terapi = document.getElementById('daftarTerapi').value;
+  if (!nama || !telp || !terapi) { alert('Mohon isi nama pasien, nomor telepon, dan jenis terapi.'); return; }
+  document.getElementById('modalSuccessMsg').innerText = 'Pendaftaran ' + nama + ' berhasil! Kami akan menghubungi Anda di ' + telp + ' untuk konfirmasi jadwal konsultasi.';
+  document.getElementById('modalSuccess').classList.add('open');
+  document.getElementById('daftarNama').value = '';
+  document.getElementById('daftarTgl').value = '';
+  document.getElementById('daftarTelp').value = '';
+  document.getElementById('daftarEmail').value = '';
+  document.getElementById('daftarTerapi').value = '';
+  document.getElementById('daftarKeluhan').value = '';
+  document.getElementById('daftarJadwal').value = '';
+}
+
+window.addEventListener('scroll', function() {
+  var links = document.querySelectorAll('.nav-links a');
+  var sections = ['beranda','tentang','layanan','faq','kontak','daftar'];
+  var current = '';
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 90) current = id;
+  });
+  links.forEach(function(a) {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
